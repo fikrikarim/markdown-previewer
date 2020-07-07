@@ -29,17 +29,13 @@ function App() {
   };
 
   const toggleTheme = () => {
-    if (theme === Theme.light) {
-      setTheme(Theme.dark);
-    } else {
-      setTheme(Theme.light);
-    }
+    theme === Theme.light ? setTheme(Theme.dark) : setTheme(Theme.light);
   };
 
   return (
     <div className="App">
       <button onClick={toggleTheme} className="toggleButton">
-        Toggle theme
+        Toggle dark theme
       </button>
 
       <div className="column">
@@ -52,7 +48,7 @@ function App() {
         />
       </div>
 
-      <div className="column">
+      <div className={`column ${theme === "light" ? "light" : "dark"}`}>
         <ReactMarkdown source={editorValue} />
       </div>
     </div>

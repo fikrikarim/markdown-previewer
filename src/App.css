@@ -11,3 +11,13 @@
   z-index: 1;
   right: 0;
 }
+
+.light {
+  color: #202124;
+  background: #fafafa;
+}
+
+.dark {
+  color: #fafafa;
+  background: #202124;
+}
