@@ -9,12 +9,12 @@ import "./App.css";
 
 function App() {
   const defaultValue = `# Markdown Preview
-## Header 2
+## This is header 2
 
-_ italic _
+_ Italicia 🇮🇹 _
 
-** bold **
-  `;
+** boldie **
+`;
 
   const [editorValue, setEditorValue] = useState(defaultValue);
 
