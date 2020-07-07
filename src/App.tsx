@@ -1,24 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ControlledEditor,
   ControlledEditorOnChange,
 } from "@monaco-editor/react";
+import ReactMarkdown from "react-markdown";
 
 import "./App.css";
 
 function App() {
+  const defaultValue = `# Markdown Preview
+## Header 2
+
+_ italic _
+
+** bold **
+  `;
+
+  const [editorValue, setEditorValue] = useState(defaultValue);
+
   const handleEditorChange: ControlledEditorOnChange = (event, value) => {
-    console.log(value);
+    setEditorValue(String(value));
   };
 
   return (
     <div className="App">
-      <ControlledEditor
-        height="90vh"
-        value={"# Markdown preview"}
-        onChange={handleEditorChange}
-        language="markdown"
-      />
+      <div className="column">
+        <ControlledEditor
+          height="100vh"
+          value={editorValue}
+          onChange={handleEditorChange}
+          language="markdown"
+        />
+      </div>
+
+      <div className="column">
+        <ReactMarkdown source={editorValue} />
+      </div>
     </div>
   );
 }
