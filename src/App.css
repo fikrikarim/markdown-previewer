@@ -5,3 +5,9 @@
 .column {
   flex: 1;
 }
+
+.toggleButton {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+}
