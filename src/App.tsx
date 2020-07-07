@@ -45,7 +45,7 @@ function App() {
         checked={theme === Theme.light}
       />
 
-      <div className="column">
+      <div className="column" data-testid="editor">
         <ControlledEditor
           theme={theme}
           height="100vh"
@@ -55,7 +55,10 @@ function App() {
         />
       </div>
 
-      <div className={`column ${theme === "light" ? "light" : "dark"}`}>
+      <div
+        className={`column ${theme === "light" ? "light" : "dark"}`}
+        data-testid="preview"
+      >
         <ReactMarkdown source={editorValue} />
       </div>
     </div>
