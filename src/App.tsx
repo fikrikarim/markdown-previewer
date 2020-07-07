@@ -4,6 +4,7 @@ import {
   ControlledEditorOnChange,
 } from "@monaco-editor/react";
 import ReactMarkdown from "react-markdown";
+import Switch from "react-switch";
 
 import "./App.css";
 
@@ -34,9 +35,15 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={toggleTheme} className="toggleButton">
-        Toggle dark theme
-      </button>
+      <Switch
+        className="themeSwitch"
+        checkedIcon={false}
+        uncheckedIcon={false}
+        onColor="#202124"
+        offColor="#569CD6"
+        onChange={toggleTheme}
+        checked={theme === Theme.light}
+      />
 
       <div className="column">
         <ControlledEditor

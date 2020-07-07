@@ -6,8 +6,8 @@
   flex: 1;
 }
 
-.toggleButton {
-  position: absolute;
+.themeSwitch {
+  position: absolute !important;
   z-index: 1;
   right: 0;
 }
